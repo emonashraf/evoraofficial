@@ -12,6 +12,9 @@
   body {
     @apply font-poppins  overflow-x-hidden;
   }
+  img{
+    @apply h-full w-full object-cover  ;
+  }
   h1,
   h2,
   h3,
@@ -32,21 +35,66 @@
   h4 {
     @apply text-base xl:text-lg text-[#313030] font-medium;
   }
+  h5 {
+    @apply text-base  font-medium ;
+  }
+ 
+  small{
+    @apply text-gray-600
+  }
 
-  section {
-    @apply py-16 md:pt-28 md:pb-20;
-  }
-  input,
-  select,
-  textarea {
-  }
+    
 }
 
 @layer components {
+  
+  .primary-btn{
+    @apply bg-primary py-3 px-4 rounded-lg hover:bg-primaryLight text-center shadow;
+  }
   .badge {
     @apply bg-primary text-center rounded-md px-3 py-1;
   }
+  .text-with-lines {
+    @apply flex items-center text-center after:content-[''] after:flex-1 after:h-[2px] after:bg-gray-300 after:ml-2 before:content-[''] before:flex-1 before:h-[2px] before:bg-gray-300 before:mr-2
+  }
+  /* Swiper */
+  .slider-thumbnail .swiper-slide-thumb-active {
+    @apply border-2 border-gray-900;
+  }
+ .swiper-button-next,
+ .swiper-button-prev {
+   @apply w-10 h-10 bg-white rounded-full !important;
+ }
+
+ .swiper-button-next::after,
+ .swiper-button-prev::after {
+   @apply text-lg p-3 text-gray-950 !important;
+ }
+ /* accordion */
+ .accordion-header {
+   @apply p-4 cursor-pointer m-0 relative after:content-[''] after:absolute after:right-4  after:top-1/2 after:transition-all after:duration-300 after:block after:w-2 after:h-2 after:border-r-gray-700 after:border-t-gray-700 after:border-t-2 after:border-r-2 after:transform after:-translate-y-1/2 after:rotate-[135deg];
+ }
+
+ .accordion-content {
+   @apply max-h-0 overflow-hidden transition-all duration-300;
+
+ }
+
+ .accordion-item.open .accordion-content {
+   @apply max-h-full ;
+ }
+
+ .accordion-item.open .accordion-header{
+   @apply after:transform after:-translate-y-1/2 after:rotate-[315deg];
+ }
+
+ 
+        
 }
 
 @layer utilities {
 }
+
+
+
+
